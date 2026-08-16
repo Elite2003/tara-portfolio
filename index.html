@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10131a" />
+    <title>Tara | 3D Game Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="portfolio-game">
+      <canvas id="world" aria-label="Interactive 3D portfolio world"></canvas>
+
+      <div class="noise" aria-hidden="true"></div>
+
+      <header class="hud top-hud">
+        <a class="brand" href="#who" data-zone-link="who" aria-label="Open Who am I">
+          <span class="brand-mark">T</span>
+          <span>Tara.dev</span>
+        </a>
+        <nav aria-label="Portfolio stations">
+          <button class="nav-button active" data-zone-link="who">Who am I</button>
+          <button class="nav-button" data-zone-link="projects">Projects</button>
+          <button class="nav-button" data-zone-link="skills">Skills</button>
+          <button class="nav-button" data-zone-link="idea">The Idea</button>
+          <button class="nav-button" data-zone-link="connect">Connect</button>
+        </nav>
+      </header>
+
+      <section class="hud hero-panel" id="heroPanel" aria-live="polite">
+        <p class="eyebrow" id="zoneLabel">Spawn point</p>
+        <h1 id="zoneTitle">Build. Play. Explain.</h1>
+        <p id="zoneCopy">
+          A 3D portfolio world for a creator who blends game thinking, web craft, and clear storytelling.
+        </p>
+        <div class="action-row">
+          <button class="primary-action" id="enterZone">Enter station</button>
+          <button class="icon-action" id="autoTour" aria-label="Start auto tour" title="Start auto tour">▶</button>
+        </div>
+      </section>
+
+      <aside class="hud mission-panel">
+        <div>
+          <p class="eyebrow">Vision</p>
+          <p>Make digital spaces feel useful, memorable, and alive.</p>
+        </div>
+        <div>
+          <p class="eyebrow">Mission</p>
+          <p>Design playful systems that solve real problems and invite people in.</p>
+        </div>
+      </aside>
+
+      <section class="hud detail-panel" id="detailPanel" aria-labelledby="detailTitle">
+        <button class="close-detail" id="closeDetail" aria-label="Close details">×</button>
+        <p class="eyebrow" id="detailKicker">Station</p>
+        <h2 id="detailTitle">Who am I</h2>
+        <div id="detailBody"></div>
+      </section>
+
+      <div class="hud controls" aria-label="Movement controls">
+        <button data-move="up" aria-label="Move forward">▲</button>
+        <div>
+          <button data-move="left" aria-label="Move left">◀</button>
+          <button data-move="down" aria-label="Move back">▼</button>
+          <button data-move="right" aria-label="Move right">▶</button>
+        </div>
+      </div>
+
+      <footer class="hud bottom-hud">
+        <span>WASD / arrows to roam</span>
+        <span id="statusText">Tap a station or move close to discover it.</span>
+      </footer>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
